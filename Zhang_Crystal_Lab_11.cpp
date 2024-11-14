@@ -5,85 +5,74 @@
 #include <iostream>  
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
 
 using namespace std; 
 
 int main () 
-{
-    const int ARRAY_SIZE = 50;
+{ 
+    const int ARRAY_SIZE = 50; //makes it so that all arrays from now on have a size of 50
 
 
-   	double alpha [ARRAY_SIZE];
-
-    for (int i = 1; i <= 50; i++)
+   	double alpha [ARRAY_SIZE]; //creates an array with the size of the const.
     {
-        if (i>=1 && i<=10)
+        for (int i=1; i <= 25; i++) //continues this code 25 times (the amount of times i needs to be squared)
         {
-            alpha [i] = i*i; 
-            cout << alpha [i] << " ";
+          alpha [i] = pow(i, 2); //inputs the sqaure of the index into the corresponding index
+          cout << alpha [i] << " "; //prints the value of above out
+
+          if (i == 10) //since each line should have ten outputs each, this will mark the end of line one
+          cout << endl; 
+
+          if (i == 20) // end of line two 
+          cout << endl; 
+
+          //will let the code continue on a new line five more times 
         }
 
-    cout << endl;
-        if (i>= 11 && i <= 20)
-    {
-        alpha [i] = i*i; 
-        cout << alpha [i] << " ";
+        for (int i = 26; i <= 50; i++) //continues this code 25 times (the amount of times i needs to be multiplied by 3)
+        {
+            alpha [i] = i*3; //inputs the index times 3 into the corresponding index
+            cout << alpha [i] << " "; //prints the value of above
+
+            //allows the code to run five times before this runs
+            if (i == 30) //this will mark the end of line 3, with 5 numbers with the index squared and the other five is the index times 3
+            cout << endl; 
+
+            if (i == 40) //this will mark the end of line 4
+            cout << endl; 
+
+            //line 5, with the 50th number ends
+        }
     }
-
-    cout << endl;
-        if (i>=21 && i <= 25)
-    {
-        alpha [i] = i*i; 
-        cout << alpha [i] << " ";
-    }
-
-        if (i >= 26 && i <= 30)
-    {
-        alpha [i] = i*3; 
-        cout << alpha [i] << " ";
-    }
-
-    cout << endl;
-        if (i >= 31 && i <= 40)
-    {
-        alpha [i] = i*3; 
-        cout << alpha [i] << " ";
-    }
-
-
-    cout << endl;
-    for (int i = 41; i <= 50; i++)
-    {
-        alpha [i] = i*3; 
-        cout << alpha [i] << " ";
-    }
-
 
 
     cout << endl;
 
    	double beta [ARRAY_SIZE];
-
-    int count = 0;
-    double average = 0;
-
-    for (int i=0; i <=50; i++) 
     {
-        beta [i] = rand() % 100;
-        cout << beta [i] << " ";;
 
-        average = beta [i] + average;
+        int count = 0;
+        double average = 0;
 
-      if (beta [i] == 100) 
-        int count = count + 1;
+        srand(time(0));
+        for (int i=1; i <=50; i++) 
+        {
+        
+            beta [i] = rand() % 100;
+            cout << beta [i] << " ";;
 
+            average = beta [i] + average;
+
+        if (beta [i] == 100) 
+            int count = count + 1;
+        }
+
+        cout << endl; 
+        cout << "The average of the numbers that were randomly generated is: " << average/50 << endl;
+        cout << "The number of times that the random number generated is 100 is: " << count << endl;
     }
-
-    cout << endl; 
-    cout << "The average of the numbers that were randomly generated is: " << average/50 << endl;
-    cout << "The number of times that the random number generated is 100 is: " << count << endl;
 
 
     return 0;
-
-}
+    }
