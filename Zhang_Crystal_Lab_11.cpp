@@ -6,7 +6,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
-#include <iomanip>
 
 using namespace std; 
 
@@ -33,7 +32,7 @@ int main ()
             cout << alpha [i] << " "; //prints the value of above
         }
             if ((i + 1) % 10 == 0) 
-            //makes it so that the array is printed in rows of 10/if the current index plus one divided by 10 has a remainder of zero, that                 means that ten values have already been printed
+            //makes it so that the array is printed in rows of 10/if the current index plus one divided by 10 has a remainder of zero, that means that ten values have already been printed
             cout << endl; //if above is true, then do this
     }
     
@@ -63,7 +62,7 @@ int main ()
             count = count + 1;
 
         if ((i + 1) % 10 == 0) 
-            //makes it so that the array is printed in rows of 10/if the current index plus one divided by 10 has a remainder of zero, that                 means that ten values have already been printed
+            //makes it so that the array is printed in rows of 10/if the current index plus one divided by 10 has a remainder of zero, that means that ten values have already been printed
                 cout << endl; //print if true
         }
 
